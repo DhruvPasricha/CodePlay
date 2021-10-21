@@ -21,7 +21,6 @@ function Editor(prop) {
                         mode: lang,
                         theme: 'material',
                         lineNumbers: false,
-                        autofocus: true,
                         readOnly: false,
                         lineWrapping: true,
                         lineNumberFormatter: true,
