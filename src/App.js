@@ -12,7 +12,6 @@ export default function App() {
 }`)
   const [jsValue, setJs] = useState(`console.log("Hello World")`);
 
-
   return (
     <center>
       <div className="pane top-pane">
@@ -24,7 +23,6 @@ export default function App() {
                 lang="xml"
                 value={htmlValue}
                 setValue={setHtml}
-
               />
 
               <ColumnResizer
@@ -57,19 +55,17 @@ export default function App() {
               />
 
             </tr>
-
           </tbody>
         </table>
+
       </div>
-      <div className="pane">
-        <iframe
-          title="output"
-          sandbox="allow-scripts"
-          frameBorder="0"
-          width="100%"
-          height="100%">
+
+      <div className="outputScreen">
+        <iframe srcDoc={"<html>" + htmlValue + "</html>" + "<style>" + cssValue + "</style>" + "<script>" + jsValue + "<script>"} width="100%" height="100%" frameBorder="false">
         </iframe>
       </div>
+
+
     </center>
   )
 }

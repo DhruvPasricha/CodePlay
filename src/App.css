@@ -1,21 +1,37 @@
 body {
-  background-color: black;
+  background-color: #323641;
 }
 
 button {
-  width: 100%;
+  color: white;
+  background-color: black;
+}
+
+.top-pane {
+  background-color: black;
 }
 
 .editor {
-  width: 100%;
+  width: 32.5vw;
   display: block;
-  max-width: 45vw;
-  min-width: 27vw;
   min-height: 40vh;
 }
 
 .resizer {
-  background-color: white;
-  /* zoom: 200%; */
+  background-color: black;
   margin-top: 5vw;
+}
+
+
+iframe{
+  border-top: 5px solid black;
+}
+
+.outputScreen {
+  width: 98.5vw;
+  height: 40vh;
+  border: 0px;
+  background-color: whitesmoke;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
