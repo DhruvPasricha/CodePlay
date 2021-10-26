@@ -1,10 +1,17 @@
 body {
-  background-color: #323641;
+  background-color: #202020;
+  overflow: hidden;
+}
+
+.heading {
+  background-color: #272727;
+  color: white;
 }
 
 button {
+  width: 100%;
   color: white;
-  background-color: black;
+  overflow: hidden;
 }
 
 .top-pane {
@@ -12,24 +19,23 @@ button {
 }
 
 .editor {
-  width: 32.5vw;
-  display: block;
+  width: 33vw;
   min-height: 40vh;
 }
 
 .resizer {
-  background-color: black;
+  background-color: #272727;
   margin-top: 5vw;
+  width: 2vw;
 }
 
-
-iframe{
+iframe {
   border-top: 5px solid black;
 }
 
 .outputScreen {
-  width: 98.5vw;
-  height: 40vh;
+  width: 100vw;
+  height: 41vh;
   border: 0px;
   background-color: whitesmoke;
   margin-left: 0px !important;
