@@ -37,7 +37,8 @@ iframe {
   width: 100vw;
   height: 41vh;
   border: 0px;
-  background-color: whitesmoke;
+  background-color: #20202000;
   margin-left: 0px !important;
   margin-right: 0px !important;
+  display: flex;
 }

@@ -1,14 +1,10 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
+import React from "react";
+
 export default function Heading(prop) {
-    const { name } = prop;
-    return (
-        <center>
-            <div className="heading">
-                {/* <Button variant="outline-secondary">{name}</Button>
-                 */}
-                {name}
-            </div>
-        </center>
-    )
+  const { name } = prop;
+  return (
+    <center>
+      <div className="heading">{name}</div>
+    </center>
+  );
 }

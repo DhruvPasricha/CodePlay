@@ -2,25 +2,31 @@ import React from "react";
 import CodeEditor from "./CodeEditor";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { initialHTML, initialCSS, initialJS } from "./InitialValues";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ColumnResizer from "react-column-resizer";
 
 export default function App() {
-  
   const [htmlValue, setHtml] = useState(initialHTML);
   const [cssValue, setCSS] = useState(initialCSS);
   const [jsValue, setJs] = useState(initialJS);
-  
-  let Code =
-    "<html>" +
-    htmlValue +
-    "</html>" +
-    "<style>" +
-    cssValue +
-    "</style>" +
-    "<script>" +
-    jsValue +
-    "</script>";
+  const [Code, setCode] = useState(`
+<html>
+<body>${htmlValue}</body>
+<style>${cssValue}</style>
+<script>${jsValue}</script>
+</html>`);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setCode(`
+      <html>
+      <body>${htmlValue}</body>
+      <style>${cssValue}</style>
+      <script>${jsValue}</script>
+      </html>`);
+    }, 250);
+    return () => clearTimeout(timeout);
+  }, [htmlValue, cssValue, jsValue]);
 
   return (
     <center>
@@ -56,12 +62,16 @@ export default function App() {
           </tbody>
         </table>
       </div>
+
       <div className="outputScreen">
         <iframe
           srcDoc={Code}
+          title="output"
           width="100%"
           height="100%"
-          frameBorder="false"
+          frameBorder="0"
+          sandbox="allow-scripts"
+          loading="lazy"
         ></iframe>
       </div>
     </center>
